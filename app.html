@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Page</title>
+    <title>TacoCat</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,9 +33,6 @@
                             Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="app.html">The App</a>
                     </li>
                     <li class="nav-item">
@@ -54,15 +51,32 @@
 
     <!-- Main section -->
     <main id="content" class="flex-shrink-0">
-        <div class="container">
-            <h1>App UI Here</h1>
-            <form>
-                <input id="message" type="text" placeholder="Enter A Message" required>
-                <button id="btnSubmit" type="button" class="btn btn-dark">Display Message</button>
-                <button id="btnSubmit2" type="button" class="btn btn-dark">Display Message 2</button>
-            </form>
+        <div class="container col-xxl-8 px-4 py-5 mt-5">
+            <div class="row row-cols-1">
+                <div class="col col-md-6">
+                    <h1>Taco Cat: A Coding Project</h1>
+                    <p>This Project reverses a string using a "decremented for" loop and prints it out if it is a palindrom.</p>
+                </div>
+                <div class="col col-md-6">
+                    <h5>Enter a string to reverse</h5>
+                    <form class="row">
+                        <div class="col-12">
+                            <input type="text" id="userString" class="form-control" required
+                                placeholder="Enter 2 or more characters" />
+                        </div>
+                        <div class="col-12">
+                            <input type="text" id="userString" class="form-control" required
+                                placeholder="Enter 2 or more characters" />
+                        </div>
+                        <div class="col-12">
+                            <button type="button" id="btnSubmit" class="btn btn-danger">Reverse!</button>
+                        </div>
+                    </form>
+                    <hr />
+                    <p id="results"></p>
+                </div>
+            </div>
         </div>
-
     </main>
 
     <!-- Footer Section -->
@@ -97,12 +111,9 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-    document.getElementById("btnSubmit").addEventListener("click", displayMessage);
+        document.getElementById("btnSubmit").addEventListener("click", getUserString);
     </script>
-    <script>
-    document.getElementById("btnSubmit2").addEventListener("click", displayMessage2);
-    </script>
-
+   
 </body>
 
 </html>
