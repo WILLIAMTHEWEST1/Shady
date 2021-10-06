@@ -2,21 +2,22 @@
 //Controlling function
 function getUserString() {
     //get the user's input
-    let userstring = document.getElementById("userString")
+    let userString = document.getElementById("userString").value
     //reverse the user's input- separate function
-    let revString = reverseString(userString)
+    let revString = reverseStringA(userString)
 
     //compare original input and reversed input - separate function
-    let result = compareStrings(userString, revString)
+    let results = compareStrings(userString, revString)
 
     //output results- separate function
-    displayString(result);
+    displayString(results);
 };
 
     //This is REWIND'S JS 
-    function reverseString(userString) {
+    function reverseStringA(userString) {
         let startValue = userString.length - 1;
         let endValue = 0;
+
         let revString = "";
 
 
@@ -28,6 +29,12 @@ function getUserString() {
 
 
     };
+
+    function reverseStringB(userString){
+
+        return userString.split('').reverse().join("");
+
+    }
     //This we create
     //A != a
     //Normalize the case
@@ -37,14 +44,20 @@ function getUserString() {
         let user = userString.toLowerCase()
         let rev = revString.toLowerCase()
 
+        if(user == rev){
+         return "That's a Palindrome!";
+        } else{
+            return "That's not a Palindrome";
+        }
+
     };
 
     //We want to output three things
     //1. The original input.
     //2.The reversed input.
     //3. Was it a palindrome?
-    function displayString(revString) {
+    function displayString(result) {
         let output = document.getElementById("results");
-        output.innerHTML = revString;
+        output.innerText = `${result}`;
 
     };
